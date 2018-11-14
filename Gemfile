@@ -39,6 +39,7 @@ gem 'watir'
 gem 'google_drive'
 gem 'geckodriver-helper'
 gem 'faker'
+gem 'bootstrap'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
