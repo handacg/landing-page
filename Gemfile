@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
@@ -35,12 +35,8 @@ gem 'twitter'
 gem 'dotenv'
 gem 'watir'
 gem 'google_drive'
-gem 'selenium-webdriver'
 gem 'geckodriver-helper'
 gem 'faker'
-gem 'pry'
-gem 'json'
-gem 'nokogiri'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
