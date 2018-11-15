@@ -20,7 +20,7 @@
 
 .logo {
   grid-column: 1;
-  background-image: url("https://blog.codepen.io/wp-content/uploads/2012/06/Black-Large.png");
+  background-image: url("https://www.thehackingproject.org/packs/packs/static_pages/assets/images/logo_black-3d6bec995368618a7e9f44536410ae0a.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 10vh;
@@ -32,7 +32,6 @@
 
 .navLinks {
   font-size: 1.2em;
-  text-decoration: none;
   text-transform: uppercase;
   color: black;
   padding:0px 10px;
@@ -51,6 +50,8 @@
   content: "";
   height: 2px;
   left: 50%;
+  text-decoration: none;
+  color: black;
   position: absolute;
   background: yellow;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
