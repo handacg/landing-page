@@ -5,19 +5,17 @@
 	 	</H1>
 	</div>
 	
-	<!-- Begin MailChimp Signup Form  	-->
+  <p>Votre email</p>
 	<div class="mailchimp">
-		<p>Votre email</p>
-		<form action="https://herokuapp.us19.list-manage.com/subscribe/post?u=41e0c7f063f520569241a2747&amp;id=513a1c8a9f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
+      <%= text_field_tag 'EMAIL', @new_subscriber.email, class:"email", id:"mce-EMAIL", placeholder: "Entrez votre email", class: 'form-control col-sm-9' %>
+      <br />
+    <%= submit_tag "S'inscrire", class: 'button' %>
+  <% end %>
+  </div>
 
-  	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="" required>
-    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_41e0c7f063f520569241a2747_513a1c8a9f" tabindex="-1" value=""></div>
 
-    <div class="clear">
-    	<input type="submit" value="Subscribe" name="s'inscrire" id="mc-embedded-subscribe" class="button"></div>
-    </div>
-</div>
+
 
 <div class="program-banner">
 	<div class='program-text'> 
