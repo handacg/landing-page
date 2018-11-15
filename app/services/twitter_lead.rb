@@ -9,34 +9,45 @@ Dotenv.load
 class TwitterLead
 
     def initialize
-        
-        client = Twitter::REST::Client.new do |config|
+        puts "Bonjour"
+        @client = Twitter::REST::Client.new do |config|
+        # Utiliser DOTENV
+            config.consumer_key        = ENV["TWITTER_API_KEY"]
+            config.consumer_secret     = ENV["TWITTER_API_SECRET"]
+            config.access_token        = ENV["ACCESS_TOKEN"]
+            config.access_token_secret = ENV["ACCESS_TOKEN_SECRET"]        
         # Utiliser MASTER KEY
-            Rails.application.credentials.dig(:TWITTER_API_KEY)
-            Rails.application.credentials.dig(:TWITTER_API_SECRET)
-            Rails.application.credentials.dig(:TWITTER_ACCESS_TOKEN)
-            Rails.application.credentials.dig(:TWITTER_ACCESS_TOKEN_SECRET)
+            # Rails.application.credentials.dig(:TWITTER_API_KEY)
+            # Rails.application.credentials.dig(:TWITTER_API_SECRET)
+            # Rails.application.credentials.dig(:TWITTER_ACCESS_TOKEN)
+            # Rails.application.credentials.dig(:TWITTER_ACCESS_TOKEN_SECRET)
         end
+        puts @client 
     end
 
     def namelead(string)
         # chercher les noms de mairies ou autre persona
-        Lead.where("persona = #{string}") do |leadpersona| 
-            name_lead = []
-            name_lead << leadpersona.name
+        @name_lead = []
+   
+        Lead.where("persona = ?", string).each do |leadpersona| 
+            puts leadpersona
+            @name_lead << leadpersona.name
         end 
+        print @name_lead
     end
 
     def followmessagelead(tab)
         # pour chaque nom, chercher "ville de le_nom_de_la_ville" sur twitter
         # recherche faite par morceaux de 15 noms et non tous d'affilée (règle twitter)
         tab.each do |valeur| 
-
+            puts @client
+            puts "bonjour3"
             @resultats_username = []
 # =>> à adapter si autre cible
-            @chaque_lead = client.user_search("ville de #{valeur}") 
+            @chaque_lead = @client.user_search("ville de #{valeur}") 
             @resultats_username << @chaque_lead
 
+            puts @resultats_username
             i = 0
             # pour chaque section de résultats, follow et envoyer message
             @resultats_username.each do 
@@ -44,10 +55,10 @@ class TwitterLead
                 puts "#{first_result} followed !"
                 begin
                     # suivre ce handle
-                    client.follow(first_result) 
+                    @client.follow(first_result) 
                     # tweeter un message avec le handle et un lien vers notre page
 # =>> à adapter si autre cible
-                    client.update('Bonjour #{first_result}, intéressé pour organiser une formation gratuite au code dans votre ville ? C\'est possible : ')
+                    @client.update('Bonjour #{first_result}, intéressé pour organiser une formation gratuite au code dans votre ville ? C\'est possible : ')
                     sleep(5)
                 rescue => error                
                 end
@@ -62,9 +73,9 @@ class TwitterLead
     end
 
     # Pour lancer la fonction, rentrer nom du persona à twitter : mairie ou autre
-    def perform(string)
-        name_lead = namelead(string)
-        followmessagelead(name_lead)
+    def perform(mytext)
+        namelead(mytext)
+        followmessagelead(@name_lead)
     end
 
 end
