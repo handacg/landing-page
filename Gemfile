@@ -41,6 +41,7 @@ gem 'geckodriver-helper'
 gem 'faker'
 gem 'bootstrap'
 gem 'rubocop'
+gem 'gibbon'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
