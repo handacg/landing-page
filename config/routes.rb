@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root 'landing#new'
+	get '/', to: 'landing#new', as: 'root'
+	post '/', to: 'landing#create'
 end
