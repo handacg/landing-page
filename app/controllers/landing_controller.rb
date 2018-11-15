@@ -6,6 +6,7 @@ class LandingController < ApplicationController
 	end
 
 	def new
+		@new_subscriber = Subscriber.new
 	end
 
 	def show
