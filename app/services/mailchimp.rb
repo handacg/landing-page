@@ -1,4 +1,8 @@
-class MailchimpDraft
+class Mailchimp
+
+	def initialize
+		@gibbon = Gibbon::Request.new
+	end
 
 	def retrieve
 		@gibbon.lists.retrieve
