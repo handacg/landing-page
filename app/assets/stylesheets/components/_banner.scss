@@ -1,7 +1,7 @@
 .hero-banner{
 	background-color: #FAF8F2;
 	height: 90vh;
-	display: grid;
+  padding: 60px;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
     grid-gap: 1em;
@@ -26,17 +26,18 @@
 
 /* mailchimp CSS */
 .mailchimp {
-	 grid-column: 2;
 	 color: #3D6392;
-	 padding: 30px 10px;
-	 margin: 200px 20px;
+   vertical-align: middle;
 	 border-radius: 10px;
+}
+
+.form-control {
+  display:inline
 }
 
 	.mailchimp input {
 		 border: medium none;
     	color: gray;
-    	font-family: times new roman;
     	font-size: 16px;
     	font-style: italic;
     	margin-bottom: 10px;
@@ -52,6 +53,7 @@
 			background: #115B87;
 			color: #fff;
 			cursor: pointer;
+      margin: 10px;
 			font-size: 15px;
 			width: 35%;
 			padding: 8px 0;
@@ -60,25 +62,30 @@
 
 
 /*form css */
-
+  
 .program-banner{
 	background-color: white;
 	height: 90vh;
-	display: grid;
+
 	grid-template-rows: repeat(2, 1fr);
 	position: relative;
 	justify-items: center;
 }
 
 .program-text{
-	grid-row: 1;
+  text-align: center;
+  padding-top: 50px;
+
+
 }
 
 .tabbed {
-  width: 700px;
+  width: 800px;
   height: 400px;
   margin: 30px auto;
   grid-area: tabbed;
+  text-align: center;
+
 }
 
 .tabbed > input {
@@ -96,7 +103,7 @@
 
 .tabbed > label:hover,
 .tabbed > input:checked + label {
-  background: #FF974D;
+  background: #005988;
 }
 
 .tabs {
@@ -105,10 +112,10 @@
 }
 
 .tabs > div {
-  width: 500px;
+  width: 700px;
   position: absolute;
-  border: 2px solid #FF974D;
-  padding: 10px 30px 40px;
+  border: 2px solid #005988;
+  padding: 10px;
   line-height: 1.4em;
   opacity: 0;
   transform: rotateX(-20deg);
@@ -120,7 +127,8 @@
 #tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
 #tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
 #tab-nav-3:checked ~ .tabs > div:nth-of-type(3),
-#tab-nav-4:checked ~ .tabs > div:nth-of-type(4){
+#tab-nav-4:checked ~ .tabs > div:nth-of-type(4),
+#tab-nav-5:checked ~ .tabs > div:nth-of-type(5){
   transform: rotateX(0);
   opacity: 1;
   z-index: 1;
