@@ -28,5 +28,5 @@ Pour faire des actions précises :
 - lancer une nouvelle campagne mailchimp : se connecter via ses APIkeys et créer une nouvelle campagne
 - tracker l'activité via le compte Google analytics
 
-### Les liens en production sur Heroku
-XXXX
+### Lien du site en production sur Heroku
+https://decouvre-thp.herokuapp.com/
