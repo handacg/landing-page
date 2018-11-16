@@ -1,9 +1,7 @@
-<%if @index == 0 %>
+<%if @people == @types[0] %>
 	<%= render "partial/students-banner" %>
-<%elsif @index == 1%>
+<%elsif @people == @types[1]%>
 	<%= render "partial/designer-banner" %>
-<%elsif @index == 2%>
+<%elsif @people == @types[2]%>
 	<%= render "partial/cities-banner" %>
-<%else%>
-	<%= render "partial/students-banner" %>
 <% end %>

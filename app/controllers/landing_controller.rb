@@ -9,13 +9,12 @@ class LandingController < ApplicationController
 
 	def new
 		@new_subscriber = Subscriber.new
-		types = ['designers','students','cities']
-		people = params[:people]
+		@types = ['designers','students','cities']
+		@people = params[:people]
 
-		if types.index(people) == nil
+		if @types.index(@people) == nil
 			redirect_to "/students"
 		else
-			@banner = "shared/#{people}-banner"
 		end
 	end
 
