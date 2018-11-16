@@ -1,18 +1,22 @@
 class LandingController < ApplicationController
 	def create
-		puts @new_subscriber
 		email = params["email"]
 		type = params['type']
+		Subscriber.create(email: email, type: type)
 		Mailing.new.new_subscriber(email,type)
-		redirect_to root_path
+		redirect_back(fallback_location: root_path)
 	end
 
 	def new
 		@new_subscriber = Subscriber.new
-		@people = params[:people]
-		@index = ['designers','students','cities'].index(@people)
+		types = ['designers','students','cities']
+		people = params[:people]
+
+		if types.index(people) == nil
+			redirect_to "/students"
+		else
+			@banner = "shared/#{people}-banner"
+		end
 	end
 
-	def show
-	end
 end

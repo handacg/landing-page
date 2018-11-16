@@ -1,7 +1,9 @@
-    <%if @index == 0 %>
-	<%= render "shared/banner" %>
-	<%elsif @index == 1%>
-		<%= render "partial/designer-banner" %>
-	<%elsif @index == 2%>
-		<%= render "partial/cities-banner" %>
-	<%end%>
+<%if @index == 0 %>
+	<%= render "partial/students-banner" %>
+<%elsif @index == 1%>
+	<%= render "partial/designer-banner" %>
+<%elsif @index == 2%>
+	<%= render "partial/cities-banner" %>
+<%else%>
+	<%= render "partial/students-banner" %>
+<% end %>
