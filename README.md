@@ -30,3 +30,7 @@ Pour faire des actions précises :
 
 ### Lien du site en production sur Heroku
 https://decouvre-thp.herokuapp.com/
+/designers permet de cibler un designer avec un email adapté
+/students ----------------- un étudiant --------------------
+/cities ------------------- un maire -----------------------
+Tout autre url renvoie sur /students
