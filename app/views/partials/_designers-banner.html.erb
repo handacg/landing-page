@@ -1,0 +1,54 @@
+<div class="hero-banner">
+	<div class="hero-text">
+		<H1> Designers, apprendez à coder pour devenir full stack ! </br>
+		<span class="underline">Gratuitement.</span>
+	 	</H1>
+	</div>
+	
+  
+	<div class="mailchimp">
+    <p>Inscrivez-vous sur la liste d'attente</p>
+    <%= form_tag url_for(action: 'create'), method: "post" do %>
+      <%= email_field_tag 'email',@new_subscriber.email, id:"mce-EMAIL", placeholder: "Entrez votre email", class: 'form-control col-sm-12' %>
+      <%= hidden_field_tag 'category',@new_subscriber.category, value:@people %>
+
+      <br />
+    <%= submit_tag "S'inscrire", class: 'button' %>
+  <% end %>
+  </div>
+</div>
+
+
+
+<div class="program-banner">
+	<div class='program-text'> 
+		<H3>Codez the "startup way" </br>
+			<span class="underline">avec le bon workflow</span>
+	 		</H3>
+	</div>
+
+	<div class="tabbed">
+    	<input type="radio" name="tabs" id="tab-nav-1" checked>
+    	<label for="tab-nav-1">Semaine 0</label>
+    	<input type="radio" name="tabs" id="tab-nav-2">
+   	  <label for="tab-nav-2">Semaine 1-3</label>
+    	<input type="radio" name="tabs" id="tab-nav-3">
+    	<label for="tab-nav-3">Semaine 4-6</label>
+    	<input type="radio" name="tabs" id="tab-nav-4">
+    	<label for="tab-nav-4">Semaine 7-9</label>
+      <input type="radio" name="tabs" id="tab-nav-5">
+      <label for="tab-nav-5">Semaine 10-12</label>
+    	<div class="tabs">
+     	 <div><p><strong>Introduction</strong></p><p>La première semaine nous allons voir les bases de l'informatique : comment se servir d'un terminal, que sont Git et Github. Puis nous vous montrerons comment coder ses premières pages web, et les animer avec un tout petit peu de JavaScript.</p></div>
+     	 <div><p><strong>POO</strong></p><p> Les semaines suivantes, nous allons entrer dans le monde merveilleux de l'algorithmie avec Ruby, un langage de programmation très haut-niveau. Nous allons voir comment utiliser Ruby pour faire des applications concrètes, par exemple avec du <i>growth hacking</i>, ou encore comment utiliser des APIs pour s'amuser un peu avec des Bots.</p></div>
+      	<div><p><strong>Ruby on Rails</strong></p><p> Durant ces trois semaines, nous allons plonger dans le fameux framework Ruby On Rails, qui permet de faire des applications web. Nous verrons comment les sites web marchent, avant d'étudier le modèle du MVC de Rails, pour faire un tas d'applications web. </p></div>
+      	<div><p><strong>Front End</strong></p><p>Ces deux semaines seront consacrées à la partie front des sites internet : nous verrons comment embellir les sites, et faire des sites adaptés au mobile. Nous présenterons les frameworks populaire tels que Bootstrap et nous verrons comment manipuler les pages web avec le très populaire langage JavaScript. </p></div>  
+        <div><p><strong>Porjet Final</strong></p><p>OAprès avoir transpiré pendant 9 semaines sur plein de langages différents, nous consacrerons les 3 dernières semaines à la réalisation de gros projets.  </p></div>  
+			</div>
+		</div>
+</div>
+
+
+
+
+
