@@ -10,7 +10,7 @@
     <p>Inscrivez-vous sur la liste d'attente</p>
     <%= form_tag url_for(action: 'create'), method: "post" do %>
       <%= email_field_tag 'email',@new_subscriber.email, id:"mce-EMAIL", placeholder: "Entrez votre email", class: 'form-control col-sm-12' %>
-      <%= hidden_field_tag 'type',@new_subscriber.email, value:@people %>
+      <%= hidden_field_tag 'category',@new_subscriber.category, value:@people %>
 
       <br />
     <%= submit_tag "S'inscrire", class: 'button' %>

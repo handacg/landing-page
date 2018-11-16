@@ -1,18 +1,18 @@
 class LandingController < ApplicationController
 	def create
 		email = params["email"]
-		type = params['type']
-		Subscriber.create(email: email, type: type)
-		Mailing.new.new_subscriber(email,type)
+		category = params['category']
+		Subscriber.create(email: email, category: category)
+		Mailing.new.new_subscriber(email,category)
 		redirect_back(fallback_location: root_path)
 	end
 
 	def new
 		@new_subscriber = Subscriber.new
-		@types = ['designers','students','cities']
+		@categories = ['designers','students','cities']
 		@people = params[:people]
 
-		if @types.index(@people) == nil
+		if @categories.index(@people) == nil
 			redirect_to "/students"
 		else
 		end

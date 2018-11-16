@@ -5,7 +5,7 @@ class Mailchimp
 	end
 
 	def retrieve
-		@gibbon.lists.retrieve
+		@gibbon.automations.retrieve
 	end
 
 
